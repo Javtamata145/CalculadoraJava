@@ -6,7 +6,12 @@ public class main_ {
     {
         CalcMode1 mode1 = new CalcMode1();
         CalcView view = new CalcView(mode1);
-        CalcController controller = new CalcController(mode1,view);
+
+        // NUEVO: el cliente crea los comandos
+        Command add = new AddCommand(mode1, view);
+        Command subtract = new SubtractCommand(mode1, view);
+
+        CalcController controller = new CalcController(mode1, view, add, subtract);
 
         view.setVisible(true);
     }

@@ -43,6 +43,28 @@ public class CalcMode1 {
         }
     }
 
+    // NUEVO: Sumar al numero actual
+    public void add(String operand)
+    {
+        if (esBigDecimal(operand)) {
+            total = total.add(new BigDecimal(operand.trim()));
+        }
+        else {
+            throw new IllegalArgumentException("Operando no válido");
+        }
+    }
+
+    // NUEVO: Restar al numero actual
+    public void subtract(String operand)
+    {
+        if (esBigDecimal(operand)) {
+            total = total.subtract(new BigDecimal(operand.trim()));
+        }
+        else {
+            throw new IllegalArgumentException("Operando no válido");
+        }
+    }
+
     // Poner valor total
     public void setValue(String value)
     {

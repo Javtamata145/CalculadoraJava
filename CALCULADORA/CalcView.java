@@ -10,6 +10,8 @@ public class CalcView extends JFrame {
     private JTextField m_userInputTF = new JTextField(5);
     private JTextField m_total1TF = new JTextField(20);
     private JButton m_multiplyBtn = new JButton("Multiply");
+    private JButton m_addBtn = new JButton("Add");           // NUEVO
+    private JButton m_subtractBtn = new JButton("Subtract"); // NUEVO
     private JButton m_clearBtn = new JButton("Clear");
 
     private CalcMode1 m_mode1;
@@ -30,6 +32,8 @@ public class CalcView extends JFrame {
         content.add(new JLabel("Input"));
         content.add(m_userInputTF);
         content.add(m_multiplyBtn);
+        content.add(m_addBtn);       // NUEVO
+        content.add(m_subtractBtn);  // NUEVO
         content.add(new JLabel("Total"));
         content.add(m_total1TF);
         content.add(m_clearBtn);
@@ -66,6 +70,18 @@ public class CalcView extends JFrame {
     void addMultiplyListener(ActionListener mal)
     {
         m_multiplyBtn.addActionListener(mal);
+    }
+
+    // NUEVO
+    void addAddListener(ActionListener al)
+    {
+        m_addBtn.addActionListener(al);
+    }
+
+    // NUEVO
+    void addSubtractListener(ActionListener sl)
+    {
+        m_subtractBtn.addActionListener(sl);
     }
 
     void addClearListener(ActionListener cal)
